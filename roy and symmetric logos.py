@@ -1,23 +1,29 @@
 rlis = []
 
 def isSym(lis):
+    #(without using palindrome)
+    # while(i<m): 
+    #     if(rlis[i] == rlis[m]) and (clis[i] == clis[m]):
+    #         i+=1
+    #         m-=1
+    #     else:
+    #         break
+    # if(i > m) or (i==m):
+    #     print("YES")
+    # else:
+    #     print("NO")
+
+    #(with using palindromes)
     i=0
     m=len(lis) - 1
     rlis = lis
     clis = []
     trans(rlis,0,clis)
-    print("rlis = ",rlis)
-    print("clis = ",clis)
-    while(i<m): 
-        if(rlis[i] == rlis[m]) and (clis[i] == clis[m]):
-            i+=1
-            m-=1
-        else:
-            break
-    if(i > m) or (i==m):
-        print("YES")
+    if((("").join(rlis)[::-1] == ("").join(rlis)) and (("").join(clis)[::-1] == ("").join(clis))):
+        print("SYMMETRIC")
     else:
-        print("NO")
+        print("NOT SYMMETRIC")
+
 
 def trans(lis,j,clis):
     temp = ''
